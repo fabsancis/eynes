@@ -1,4 +1,4 @@
-import os, random
+import random
 
 
 # FUNCIONES ACCESORIAS
@@ -34,9 +34,34 @@ def ordena_lista(list):
                 list[i-1] = aux
                 se_cambio = True
 			
-            i = i +1
+            i = i + 1
     return list
 
+
+
+def mas_joven_y_grande(list):
+    diccionario = {"Id":"","Edad":0}
+    mas_joven = 1000
+    mas_grande = 0
+    id_mas_joven = ""
+    id_mas_grande = ""
+
+    for i in range (len(list)):
+        diccionario = list[i]
+        edad = diccionario["Edad"]
+        id   = diccionario["Id"]
+
+        if mas_joven > edad:
+            mas_joven     = edad
+            id_mas_joven  = id
+            
+        if mas_grande < edad:
+            mas_grande    = edad
+            id_mas_grande = id 
+
+    s = "La persona más grande es {} y la personas mas chica es {}.".format(id_mas_grande,id_mas_joven)
+
+    return s 
 
 
 
@@ -50,7 +75,7 @@ def mostrar_lista(list):
 # PROGRAMA PRINCIPAL
 
 elementos = 10
-diccionario = {"id":"","edad":0}
+diccionario = {"Id":"","Edad":0}
 dic_lista = [diccionario]*elementos
 
 
@@ -59,4 +84,5 @@ mostrar_lista(dic_lista)
 print()
 ordena_lista(dic_lista)
 mostrar_lista(dic_lista)
-
+print()
+print(mas_joven_y_grande(dic_lista))
