@@ -14,9 +14,12 @@ def carga_matriz(m):
 
 
 def carga_ultc(m):
-    
-        for c in range (5):
-            m[4,c] = 5 - c
+    m[4,0] = 4
+    m[4,1] = 3
+    m[4,2] = 2 
+    m[4,3] = 1
+    m[4,4] = 6
+        
 
 
 def muestra_matriz(m):
@@ -38,10 +41,11 @@ def secuencia_horizontal_id(m,v):     # izquierda a derecha
             if m[f,c] + 1 == m[f, c + 1]:
                 v[consecutivos] = "(" + str(f) + "," + str(c) + ")"
                 consecutivos = consecutivos + 1
-                if consecutivos == 4:
+                if consecutivos == 3:
+                    v[consecutivos] =  "(" + str(f) + "," + str(c+1) + ")"
                     return v
 
-    return "No hay secuencia horizontal"
+    return "No hay secuencia horizontal de izquierda a derecha"
                 
                     
 
@@ -56,16 +60,37 @@ def secuencia_horizontal_di(m,v):       # derecha a izquierda
             if m[f,c] + 1 == m[f, c - 1]:
                 v[consecutivos] = "(" + str(f) + "," + str(c) + ")" 
                 consecutivos = consecutivos + 1
-                if consecutivos == 4:
+                if consecutivos == 3:
+                    v[consecutivos] = "(" + str(f) + "," + str(c-1) + ")" 
                     return v
 
-    return "No hay secuencia horizontal"
+    return "No hay secuencia horizontal de derecha a izquierda"
+
+
 
 
 def secuencia_vertical_ab(m,v):
-    pass
+    filas, columnas = np.shape(m)
+
+    for c in range(columnas):
+        consecutivos = 0
+        v = [""]*4
+        for f in range (filas-1):
+            if m[f,c] + 1 == m[f + 1, c]:
+                v[consecutivos] = "(" + str(f) + "," + str(c) + ")"
+                consecutivos = consecutivos + 1
+                if consecutivos == 3: 
+                    v[consecutivos] = "(" + str(f+1) + "," + str(c) + ")"
+                    return v
+
+    return "No hay secuencia vertical de arriba a abajo"
+
+
+
 
                 
+
+
 def muestra_vector(v):
     for i in range (len(v)):
         print(v[i])
@@ -90,7 +115,8 @@ muestra_matriz(matriz)
 print()
 
 
-#print(secuencia_horizontal_id(matriz,vector))
+print(secuencia_horizontal_id(matriz,vector))
 print(secuencia_horizontal_di(matriz,vector))
+print(secuencia_vertical_ab(matriz,vector))
 
     
