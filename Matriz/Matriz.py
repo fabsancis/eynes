@@ -88,9 +88,6 @@ def secuencia_vertical_ab(m,v):
 
 
 
-                
-
-
 def muestra_vector(v):
     for i in range (len(v)):
         print(v[i])
@@ -100,9 +97,6 @@ def muestra_vector(v):
 
 # PROGRAMA PRINCIPAL
 
-
-#Rpos = Record.create_type("Rpos","fila","columna",fila=0,columna=0)
-#rvector = np.array([Rpos]*4)
 vector = [""]*4
 matriz = np.array([[0]*5]*5)
 
