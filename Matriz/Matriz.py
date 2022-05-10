@@ -62,7 +62,8 @@ def secuencia_horizontal_di(m,v):       # derecha a izquierda
     return "No hay secuencia horizontal"
 
 
-
+def secuencia_vertical_ab(m,v):
+    pass
 
                 
 def muestra_vector(v):
