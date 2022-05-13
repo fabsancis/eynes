@@ -1,4 +1,3 @@
-from genericpath import exists
 import Clases, os
 
 def pausa():
@@ -7,23 +6,22 @@ def pausa():
 	os.system("cls")
 
 
-print()
+
 
 opcion = 1000
-opcion = input()
 
 while opcion != 0:
-
     print()
     print("      Menú")
     print()
-    print("  1 Ingresar r(radio) para crear Círculo.")
-    print("  2 Modificar r de Círculo.")
-    print("  3 Crear Nuevo Círculo con r = r(Círculo) x n.")
+    print("  1 CREAR CÍRCULO.")
+    print("  2 MODIFICAR R CÍRCULO.")
+    print("  3 Crear NUEVO CIRCULO con r = r(CIRCULO) x n.")
     print()
 
 
     opcion = int(input("Elija una opción: "))
+    print()
     os.system("cls")
     print()
 
@@ -60,9 +58,8 @@ while opcion != 0:
             print("Su Nueva Área es:      " + str(ObCirculo.area(ObCirculo.radio)))
             pausa()
             print()
-        
         except:
-            print("Debe generar 1ro un Círculo")
+            print("Debe CREAR CIRCULO primero.")
             pausa()
 
 
@@ -71,14 +68,24 @@ while opcion != 0:
         print("Nuevo Círculo rxn")
         print()
         nro = int(input("Ingrese n > 0 para multiplicar r de nuevo Círculo: "))
-        pausa()
+    
         while nro <= 0:
+            os.system("cls")
             nro = int(input("Ingrese n > 0 para multiplicar r de nuevo Círculo: "))
-        if nro > 0:
+
+        try: 
+            os.system("cls")
             NewCirculo = ObCirculo.NuevoCirculo(nro)
             print("El Nuevo Círculo tiene nuevo Radio: " + str(NewCirculo.getradio()))
             print("Su Nuevo Perímetro es: " + str(NewCirculo.perimetro(NewCirculo.radio)))
             print("Su Nueva Área es:      " + str(NewCirculo.area(NewCirculo.radio)))
+            pausa()
+        except:
+            print("Debe CREAR CIRCULO primero.")
+            pausa()
+
+    else:
+        print("Hasa la próxima!")
 
 
 
@@ -90,41 +97,6 @@ while opcion != 0:
 
 
 
-
-
-"""rad= int(input("Ingrese un n(número) de r(radio) > 0 para Círculo: "))
-
-if rad > 0:
-
-
-ObCirculo = Clases.Circulo(int(rad))
-print("El Círculo tiene Radio: " + str(ObCirculo.getradio()))
-print("Su Perímetro es: " + str(ObCirculo.perimetro(ObCirculo.radio)))
-print("Su Área es:      " + str(ObCirculo.area(ObCirculo.radio)))
-print()
-
-rad= int(input("Ingrese un nuevo radio > 0: "))
-pausa()
-print(ObCirculo.setradio(rad))
-print("El Círculo tiene nuevo radio: " + str(ObCirculo.getradio()))
-print("Su Nuevo Perímetro es: " + str(ObCirculo.perimetro(ObCirculo.radio)))
-print("Su Nueva Área es:      " + str(ObCirculo.area(ObCirculo.radio)))
-print()
-
-print("Nuevo Círculo rxn")
-nro = int(input("Ingrese n para multiplicar r de nuevo Círculo: "))
-pausa()
-if nro > 0:
-    NewCirculo = ObCirculo.NuevoCirculo(nro)
-    print("El Nuevo Círculo tiene nuevo Radio: " + str(NewCirculo.getradio()))
-    print("Su Nuevo Perímetro es: " + str(NewCirculo.perimetro(NewCirculo.radio)))
-    print("Su Nueva Área es:      " + str(NewCirculo.area(NewCirculo.radio)))
-
-
-
-
-else:
-print("El Radio debe > 0.")"""
 
 
 
