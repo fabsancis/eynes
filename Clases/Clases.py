@@ -23,12 +23,21 @@ multiplicado por n. No permitir la multiplicación por números <= 0"""
 class Circulo:
 
     #ATRIBUTOS
+
+    pi = 3.1416
+
     def __init__(self,radio):
         print()
         self.radio = radio
 
 
     #MÉTODOS
+
+    def setradio(self,radio):
+        if radio > 0:
+            self.radio = radio
+            mensaje = "El radio fue modificado."
+            return mensaje
 
     def perimetro(self,radio):
         if int(radio) <= 0:
