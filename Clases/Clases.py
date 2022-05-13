@@ -45,19 +45,11 @@ class Circulo:
 
 
     def perimetro(self,radio):
-        if int(radio) <= 0:
-            mensaje = "El Radio del ◯  debe ser > 0.   "
-            return mensaje
-        else:
             perimetro = (2*3.1416) * int(radio)
             return round(perimetro,2)
             
 
     def area(self,radio):
-        if int(radio) <= 0:
-            mensaje = "El Radio del ◯  debe ser > 0.  "
-            return mensaje
-        else:
             area = 3.1416 * (int(radio) * int(radio))
             return round(area,2)
 
