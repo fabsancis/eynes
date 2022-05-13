@@ -39,6 +39,11 @@ class Circulo:
             mensaje = "El radio fue modificado."
             return mensaje
 
+    
+    def getradio(self):
+        return self.radio
+
+
     def perimetro(self,radio):
         if int(radio) <= 0:
             mensaje = "El Radio del ◯  debe ser > 0.   "
