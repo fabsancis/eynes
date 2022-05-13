@@ -61,4 +61,9 @@ class Circulo:
             area = 3.1416 * (int(radio) * int(radio))
             return round(area,2)
 
+    
+    def NuevoCirculo(self,n):
+        circulo_rx3 = Circulo(self.radio*n)
+        return circulo_rx3
+
 
